@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import clsx from 'clsx';
-
+import {LayoutGroup, motion} from "framer-motion";
 import { range } from '@/utils';
 import Card from '@/components/Card';
 import SliderControl from '@/components/SliderControl';
@@ -14,6 +14,9 @@ function DivisionGroupsDemo({
   initialNumOfGroups = 1,
   includeRemainderArea,
 }) {
+
+    const id = React.useId()
+
   const [numOfGroups, setNumOfGroups] = React.useState(
     initialNumOfGroups
   );
@@ -39,6 +42,7 @@ function DivisionGroupsDemo({
         };
 
   return (
+      <LayoutGroup>
     <Card as="section" className={styles.wrapper}>
       <header className={styles.header}>
         <SliderControl
@@ -62,9 +66,13 @@ function DivisionGroupsDemo({
           {range(numOfGroups).map((groupIndex) => (
             <div key={groupIndex} className={styles.group}>
               {range(numOfItemsPerGroup).map((index) => {
+                  const totalInPreviousGroups =
+                      groupIndex * numOfItemsPerGroup;
+                  const layoutId = `${id}-${index + totalInPreviousGroups}`;
                 return (
-                  <div
-                    key={index}
+                  <motion.div
+                    key={layoutId}
+                    layout={layoutId}
                     className={styles.item}
                   />
                 );
@@ -94,6 +102,7 @@ function DivisionGroupsDemo({
         remainder={remainder}
       />
     </Card>
+      </LayoutGroup>
   );
 }
 
