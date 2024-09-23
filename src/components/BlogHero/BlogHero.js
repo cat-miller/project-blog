@@ -10,10 +10,19 @@ function BlogHero({
   className,
   ...delegated
 }) {
-  const humanizedDate = format(
-    new Date(publishedOn),
-    'MMMM do, yyyy'
-  );
+  const isValidDate = (date) => {
+    return !isNaN(new Date(date).getTime());
+  };
+
+  const humanizedDate = isValidDate(publishedOn)
+      ? format(new Date(publishedOn), 'MMMM do, yyyy')
+      : 'Unknown date';
+
+  console.log(humanizedDate);
+  // const humanizedDate = format(
+  //   new Date(publishedOn),
+  //   'MMMM do, yyyy'
+  // );
 
   return (
     <header
