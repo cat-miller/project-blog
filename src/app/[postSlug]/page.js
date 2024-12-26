@@ -8,6 +8,7 @@ import COMPONENT_MAP from "@/helpers/mdx-components";
 
 
 
+
 export async function generateMetadata({params}){
     const {frontmatter} = await loadBlogPost(params.postSlug);
     return {

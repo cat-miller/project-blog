@@ -60,9 +60,7 @@ html {
 
 /* GLOBAL STYLES */
 ::selection {
-  background-color: var(
-    --color-selection-background
-  ) !important;
+  background-color: var(--color-selection-background) !important;
   color: var(--color-selection-text) !important;
   background-image: none !important;
   -webkit-text-fill-color: var(
