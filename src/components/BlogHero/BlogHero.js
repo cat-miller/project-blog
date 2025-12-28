@@ -41,7 +41,7 @@ function BlogHero({
           </time>
         </p>
         <div className={styles.tags}>
-        {tags?.map((tag) => (<span>{tag}</span>))}
+        {tags?.map((tag) => (<span key={tag}>{tag}</span>))}
         </div>
       </div>
     </header>
