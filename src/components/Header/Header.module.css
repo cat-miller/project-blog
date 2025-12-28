@@ -1,0 +1,13 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  height: var(--header-height);
+  width: 100%;
+  max-width: var(--content-width);
+  padding: 16px var(--viewport-padding) 0;
+  margin-left: auto;
+  margin-right: auto;
+}
