@@ -1,15 +1,24 @@
 'use client'
 import styles from './StarsBackground.module.css';
-import { Star01 } from "@/components/Stars/Star01";
 import { Star02 } from "@/components/Stars/Star02";
 import { Star03 } from "@/components/Stars/Star03";
-import { Star04 } from "@/components/Stars/Star04";
+import {useEffect, useState} from "react";
 
-export const StarsBackground = () => {
+export default function StarsBackground()  {
+    const [maxSize, setMaxSize] = useState({ height: window?.innerHeight ?? 0, width: window?.innerWidth ?? 0 });
     const topLeftItems = [Star02, Star03, Star02, Star03, Star03, Star03];
     const topRightItems = [Star02, Star03, Star03, Star02];
     const bottomLeftItems = [Star03, Star02, Star03, Star02, Star03];
     const bottomRightItems = [Star02, Star02, Star03, Star03, Star02];
+
+    useEffect(()=>{
+        if (!window) return;
+        const handleResize = () => {
+            setMaxSize({ height: window.innerHeight, width: window.innerWidth });
+        }
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    },[])
 
     const renderStars = (items, positionClass, color = 'var(--color-decorative-600)') =>
         items.map((ItemComponent, index) => {
@@ -21,6 +30,11 @@ export const StarsBackground = () => {
             const opacity = 1;
             const rotation = Math.random() * 360
             const fill = Math.round(Math.random())
+
+            const maxWidth = maxSize.width - size;
+            const maxHeight = maxSize.height - size;
+
+            if (offsetLeftRightValue > maxWidth || offsetTopBottomValue > maxHeight) return null;
 
             return (
                 <ItemComponent

@@ -16,11 +16,11 @@ function Blocker() {
            viewBox="0 0 1440 390">
         <defs>
           <linearGradient id="a" x1="50%" x2="50%" y1="100%" y2="0%">
-            <stop offset="5%" stop-color="#1c1934"/>
-            <stop offset="95%" stop-color="#363763"/>
+            <stop offset="5%" stopColor="#1c1934"/>
+            <stop offset="95%" stopColor="#363763"/>
           </linearGradient>
         </defs>
-        <path fill="url(#a)" fill-opacity=".53"
+        <path fill="url(#a)" fillOpacity=".53"
               d="M0 400V100c44.629-27.67 89.257-55.339 136-44 46.743 11.339 95.6 61.685 149 79 53.4 17.315 111.345 1.599 162-8s94.019-13.08 141-7c46.981 6.08 97.579 21.722 150 17 52.421-4.722 106.665-29.81 150-23 43.335 6.81 75.76 45.516 116 30 40.24-15.516 88.295-85.254 144-87 55.705-1.746 119.058 64.501 169 83 49.942 18.499 86.47-10.75 123-40v300H0Z"
               className="transition-all duration-300 ease-in-out delay-150 path-0"/>
         <path fill="url(#a)"

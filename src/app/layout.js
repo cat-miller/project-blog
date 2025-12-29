@@ -3,17 +3,14 @@ import { Work_Sans, Spline_Sans_Mono } from "next/font/google";
 import clsx from "clsx";
 import RespectMotionPreferences from "../components/RespectMotionPreferences";
 import {
-  LIGHT_TOKENS,
   DARK_TOKENS,
   BLOG_TITLE,
-  COLOR_THEME_COOKIE_NAME,
 } from "@/constants";
-import { cookies } from "next/headers";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./styles.css";
-import {StarsBackground} from "@/components/Stars/StarsBackground";
+import dynamic from "next/dynamic";
 
 const mainFont = Work_Sans({
   subsets: ["latin"],
@@ -27,6 +24,8 @@ const monoFont = Spline_Sans_Mono({
   weight: "variable",
   variable: "--font-family-mono",
 });
+
+const StarBackground = dynamic(() => import("@/components/Stars/StarsBackground"), {ssr: false})
 
 export const metadata = {
   title: BLOG_TITLE,
@@ -46,7 +45,7 @@ function RootLayout({ children }) {
       >
         <body>
           <Header />
-        <StarsBackground />
+          <StarBackground />
           <main>{children}</main>
           <Footer />
         </body>

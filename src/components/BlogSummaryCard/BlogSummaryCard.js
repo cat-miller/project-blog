@@ -25,7 +25,7 @@ function BlogSummaryCard({
   return (
     <Card className={styles.wrapper}>
         <div className={styles.content}>
-            <Image src={url} alt={title} width={width/2} height={height/2} />
+            <Image priority src={url} alt={title} width={width/2} height={height/2} />
         <div className={styles.textWrapper}>
             <Link href={href} className={styles.title}>
                 {title}

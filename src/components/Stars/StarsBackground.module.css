@@ -1,20 +1,20 @@
 .position {
-    position: absolute;
+    position: fixed;
     z-index: 0;
 }
 
 .top {
-top: calc(16px + var(--offset));
+top: var(--offset);
 }
 
 .left {
-left: calc(16px + var(--offset2));
+left: var(--offset2);
 }
 
 .right {
-right: calc(16px + var(--offset2));
+right: var(--offset2);
 }
 
 .bottom {
-bottom: calc(16px + var(--offset));
+bottom: var(--offset);
 }
