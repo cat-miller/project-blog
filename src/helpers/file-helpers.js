@@ -12,6 +12,7 @@ export async function getBlogPostList() {
     const rawContent = await readFile(
       `/content/${fileName}`
     );
+    if (fileName === 'template.mdx') continue;
 
     const { data: frontmatter } = matter(rawContent);
 
