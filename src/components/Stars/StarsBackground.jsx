@@ -1,3 +1,4 @@
+'use client'
 import styles from './StarsBackground.module.css';
 import { Star01 } from "@/components/Stars/Star01";
 import { Star02 } from "@/components/Stars/Star02";
