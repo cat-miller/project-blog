@@ -15,16 +15,29 @@
 .title:hover {
   color: var(--color-primary);
 }
-.wrapper time {
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.textWrapper time {
   display: block;
   margin-bottom: 1rem;
   font-weight: 500;
   font-size: 1.125rem;
   color: var(--color-decorative-900);
 }
-.wrapper p {
+
+.textWrapper p {
   font-size: 1.125rem;
   margin-bottom: 0;
+}
+
+.content {
+  display: flex;
+  gap: 24px;
 }
 
 .arrow {
@@ -36,6 +49,8 @@
 }
 .continueReadingLink {
   font-weight: 600;
+  margin-top: auto;
+  align-self: flex-end;
 }
 .continueReadingLink:hover {
   text-underline-offset: 0.125em;

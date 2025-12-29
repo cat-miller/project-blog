@@ -30,7 +30,7 @@ async function BlogPost({params}) {
             />
             <div className={styles.page}>
                 <div className={styles.content}>
-                <Image src={'/strawberry.jpeg'} alt={'Erdbeeren Sticker'} width={240} height={320}/>
+                <Image src={frontmatter.imageUrl} alt={frontmatter.imageAlt} width={frontmatter.imageWidth} height={frontmatter.imageHeight}/>
                <MDXRemote source={content} components={COMPONENT_MAP} />
                 </div>
             </div>

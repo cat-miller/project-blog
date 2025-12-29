@@ -14,13 +14,16 @@ async function Home() {
                 Latest Content:
             </h1>
 
-            {blogPosts?.map(({slug, title, abstract, publishedOn}) => (
+            {blogPosts?.map(({slug, title, abstract, publishedOn, imageUrl, imageWidth, imageHeight}) => (
                 <BlogSummaryCard
                     slug={slug}
                     title={title}
                     abstract={abstract}
                     publishedOn={publishedOn}
                     key={slug}
+                    height={imageHeight}
+                    width={imageWidth}
+                    url={imageUrl}
                 />)
             )}
         </div>
